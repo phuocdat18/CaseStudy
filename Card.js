@@ -383,9 +383,10 @@ function check() {
     }
     score.innerText = currentScore;
     if (currentScore <= 0) {
-        alert("Bạn đã thua trò chơi!");
+        alert("Bạn đã thua trò chơi! \nMời bạn nạp thêm tiền.");
         currentScore = 0;
         score.innerText = currentScore;
+        return;
     }
 }
 function money() {
