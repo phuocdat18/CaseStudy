@@ -264,6 +264,12 @@ function check() {
     const result = document.querySelector("#result");
 
     let currentScore = +score.innerText;
+    if (currentScore <= 0) {
+        alert("Bạn đã thua trò chơi! \nMời bạn nạp thêm tiền.");
+        currentScore = 0;
+        score.innerText = currentScore;
+        return;
+    }
     const bet = parseInt(betAmount.value);
     if (isNaN(bet) || bet < 50 || bet > 500) {
         alert("Vui lòng nhập số tiền đặt cược từ 50 đến 500.");
@@ -382,12 +388,7 @@ function check() {
         audio.play();
     }
     score.innerText = currentScore;
-    if (currentScore <= 0) {
-        alert("Bạn đã thua trò chơi! \nMời bạn nạp thêm tiền.");
-        currentScore = 0;
-        score.innerText = currentScore;
-        return;
-    }
+    
 }
 function money() {
     (async () => {
