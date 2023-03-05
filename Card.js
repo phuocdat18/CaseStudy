@@ -208,12 +208,12 @@ let table = new Table();
 table.initCards();
 table.random();
 table.draw();
+
 function changeImage_1() {
     const score = document.querySelector("#score");
     const betAmount = document.querySelector("#bet-amount");
     const result = document.querySelector("#result");
 
-    let currentScore = 1000;
     const bet = parseInt(betAmount.value);
     if (isNaN(bet) || bet < 50 || bet > 500) {
         alert("Vui lòng nhập số tiền đặt cược từ 50 đến 500.");
@@ -229,7 +229,7 @@ function changeImage_2() {
     const betAmount = document.querySelector("#bet-amount");
     const result = document.querySelector("#result");
 
-    let currentScore = 1000;
+    
     const bet = parseInt(betAmount.value);
     if (isNaN(bet) || bet < 50 || bet > 500) {
         alert("Vui lòng nhập số tiền đặt cược từ 50 đến 500.");
@@ -244,7 +244,7 @@ function changeImage_3() {
     const betAmount = document.querySelector("#bet-amount");
     const result = document.querySelector("#result");
 
-    let currentScore = 1000;
+    
     const bet = parseInt(betAmount.value);
     if (isNaN(bet) || bet < 50 || bet > 500) {
         alert("Vui lòng nhập số tiền đặt cược từ 50 đến 500.");
@@ -263,7 +263,7 @@ function check() {
     const betAmount = document.querySelector("#bet-amount");
     const result = document.querySelector("#result");
 
-    let currentScore = 1000;
+    let currentScore = +score.innerText;
     const bet = parseInt(betAmount.value);
     if (isNaN(bet) || bet < 50 || bet > 500) {
         alert("Vui lòng nhập số tiền đặt cược từ 50 đến 500.");
@@ -293,7 +293,8 @@ function check() {
         if (sumNumber1 > sumNumber3) {
             var audio = document.getElementById("winsound");
             audio.play();
-            currentScore += bet;
+            currentScore += bet * 2;
+            score.innerHTML = currentScore;
             // result.innerText = `Bạn đã thắng ${bet} điểm!`;
             Swal.fire({
                 width: 600,
@@ -311,6 +312,7 @@ function check() {
             var audio = document.getElementById("losesound");
             audio.play();
             currentScore -= bet;
+            score.innerHTML = currentScore;
             // result.innerText = `Bạn đã thua ${bet} điểm!`;
             Swal.fire({
                 position: 'top-end',
@@ -423,6 +425,8 @@ function money() {
         }
     })()
 }
+
+
 // function playNewGame() {
 
 //     const cardImages = document.querySelectorAll(".card");
@@ -469,19 +473,12 @@ function playNewGame() {
     document.getElementById("player2").innerHTML = "Người chơi 2: ";
     document.getElementById("player3").innerHTML = "Người chơi 3: ";
     idCards = [];
+    // currentScore = score.innerHTML;
     let table = new Table();
     table.initCards();
     table.random();
     table.draw();
-    
-    // Khởi động lại animation
-    const animateElements = document.querySelectorAll(".card1, .card2, .card3");
-    animateElements.forEach((animateElement) => {
-        animateElement.classList.remove("animate__fadeInTopLeft");
-        void animateElement.offsetWidth; // Kích hoạt lại CSS
-        animateElement.classList.add("animate__fadeInTopLeft");
-      
-    });
+    score = document.querySelector("#score");
 }
 
 function camdo() {
