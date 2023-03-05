@@ -423,6 +423,43 @@ function money() {
         }
     })()
 }
+// function playNewGame() {
+
+//     const cardImages = document.querySelectorAll(".card");
+//     cardImages.forEach((cardImage) => {
+//         cardImage.src = "image/matbai.png";
+//     });
+//     document.getElementById("yourname").innerHTML = name + ": ";
+//     document.getElementById("player2").innerHTML = "Người chơi 2: ";
+//     document.getElementById("player3").innerHTML = "Người chơi 3: ";
+//     idCards = [];
+//     let table = new Table();
+//     table.initCards();
+//     table.random();
+//     table.draw();
+// }
+
+// function playNewGame() {
+//     const cardImages = document.querySelectorAll(".card");
+//     cardImages.forEach((cardImage) => {
+//         cardImage.src = "image/matbai.png";
+//     });
+//     document.getElementById("yourname").innerHTML = name + ": ";
+//     document.getElementById("player2").innerHTML = "Người chơi 2: ";
+//     document.getElementById("player3").innerHTML = "Người chơi 3: ";
+//     idCards = [];
+//     let table = new Table();
+//     table.initCards();
+//     table.random();
+//     table.draw();
+
+//     // Khởi động lại animation
+//     const animateElement = document.querySelector(".animate2");
+//     animateElement.classList.remove("animate__fadeInTopLeft");
+//     void animateElement.offsetWidth; // Kích hoạt lại CSS
+//     animateElement.classList.add("animate__fadeInTopLeft");
+// }
+
 function playNewGame() {
     const cardImages = document.querySelectorAll(".card");
     cardImages.forEach((cardImage) => {
@@ -436,7 +473,17 @@ function playNewGame() {
     table.initCards();
     table.random();
     table.draw();
+    
+    // Khởi động lại animation
+    const animateElements = document.querySelectorAll(".card1, .card2, .card3");
+    animateElements.forEach((animateElement) => {
+        animateElement.classList.remove("animate__fadeInTopLeft");
+        void animateElement.offsetWidth; // Kích hoạt lại CSS
+        animateElement.classList.add("animate__fadeInTopLeft");
+      
+    });
 }
+
 function camdo() {
     window.location.href = "https://f88.vn/";
 }
