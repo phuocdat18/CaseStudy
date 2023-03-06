@@ -21,6 +21,7 @@ Swal.fire({
                 'Bạn đã có 1 lựa chọn dũng cảm.',
                 'success'
             ).then(() => {
+                window.open('', '_self', '');
                 window.close();
             });
         }
@@ -229,7 +230,7 @@ function changeImage_2() {
     const betAmount = document.querySelector("#bet-amount");
     const result = document.querySelector("#result");
 
-    
+
     const bet = parseInt(betAmount.value);
     if (isNaN(bet) || bet < 50 || bet > 500) {
         alert("Vui lòng nhập số tiền đặt cược từ 50 đến 500.");
@@ -244,7 +245,7 @@ function changeImage_3() {
     const betAmount = document.querySelector("#bet-amount");
     const result = document.querySelector("#result");
 
-    
+
     const bet = parseInt(betAmount.value);
     if (isNaN(bet) || bet < 50 || bet > 500) {
         alert("Vui lòng nhập số tiền đặt cược từ 50 đến 500.");
@@ -388,7 +389,7 @@ function check() {
         audio.play();
     }
     score.innerText = currentScore;
-    
+
 }
 function money() {
     (async () => {
@@ -429,43 +430,7 @@ function money() {
 }
 
 
-// function playNewGame() {
-
-//     const cardImages = document.querySelectorAll(".card");
-//     cardImages.forEach((cardImage) => {
-//         cardImage.src = "image/matbai.png";
-//     });
-//     document.getElementById("yourname").innerHTML = name + ": ";
-//     document.getElementById("player2").innerHTML = "Người chơi 2: ";
-//     document.getElementById("player3").innerHTML = "Người chơi 3: ";
-//     idCards = [];
-//     let table = new Table();
-//     table.initCards();
-//     table.random();
-//     table.draw();
-// }
-
-// function playNewGame() {
-//     const cardImages = document.querySelectorAll(".card");
-//     cardImages.forEach((cardImage) => {
-//         cardImage.src = "image/matbai.png";
-//     });
-//     document.getElementById("yourname").innerHTML = name + ": ";
-//     document.getElementById("player2").innerHTML = "Người chơi 2: ";
-//     document.getElementById("player3").innerHTML = "Người chơi 3: ";
-//     idCards = [];
-//     let table = new Table();
-//     table.initCards();
-//     table.random();
-//     table.draw();
-
-//     // Khởi động lại animation
-//     const animateElement = document.querySelector(".animate2");
-//     animateElement.classList.remove("animate__fadeInTopLeft");
-//     void animateElement.offsetWidth; // Kích hoạt lại CSS
-//     animateElement.classList.add("animate__fadeInTopLeft");
-// }
-
+// 
 function playNewGame() {
     const cardImages = document.querySelectorAll(".card");
     cardImages.forEach((cardImage) => {
